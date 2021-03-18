@@ -9,32 +9,12 @@ import {
 } from 'react-native';
 import {Input} from 'react-native-elements';
 import {set} from 'react-native-reanimated';
-import * as data from '../../data/propinsi.json';
 
 const Registrasi = () => {
   const [PickerValue, setPickerValue] = useState('');
   const [PickerCityValue, setPickerCityValue] = useState('');
   const [PickerKecValue, setPickerKecValue] = useState('');
   const [PickerKelValue, setPickerKelValue] = useState('');
-  const [provinsi, setProvinsi] = useState([]);
-  const [showProv, setShowProv] = useState(false);
-
-  const handleShowProv = () => {
-    setShowProv(!showProv);
-  };
-  useEffect(() => {
-    setProvinsi(data);
-  }, []);
-
-  const _renderProv = ({item}) => {
-    return (
-      <ScScrollView>
-        <View>
-          <Text>{item.nama}</Text>
-        </View>
-      </ScScrollView>
-    );
-  };
 
   return (
     <View style={styles.Container}>
